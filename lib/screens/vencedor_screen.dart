@@ -8,38 +8,36 @@ class VencedorScreen extends StatelessWidget {
     final String timeVencedor =
         ModalRoute.of(context).settings.arguments as String;
 
-    return SafeArea(
-      child: Scaffold(
-        body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Text(
-                '$timeVencedor Vencedor!',
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              '$timeVencedor Vencedor!',
+              style: TextStyle(
+                color: Theme.of(context).accentColor,
+                fontSize: 25,
+              ),
+            ),
+            SizedBox(
+              height: 15,
+            ),
+            FlatButton(
+              onPressed: () {
+                Navigator.of(context).pushReplacementNamed(
+                  AppRoutes.HOME,
+                );
+              },
+              child: Text(
+                'Reiniciar',
                 style: TextStyle(
-                  color: Theme.of(context).accentColor,
-                  fontSize: 25,
+                  fontSize: 22,
+                  color: Colors.greenAccent[400],
                 ),
               ),
-              SizedBox(
-                height: 15,
-              ),
-              FlatButton(
-                onPressed: () {
-                  Navigator.of(context).pushReplacementNamed(
-                    AppRoutes.HOME,
-                  );
-                },
-                child: Text(
-                  'Reiniciar',
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.greenAccent[400],
-                  ),
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
     );

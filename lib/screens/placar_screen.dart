@@ -5,9 +5,9 @@ import '../widgets/placar_widget.dart';
 class PlacarScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-        body: Row(
+    return Scaffold(
+      body: SafeArea(
+        child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             Placar(
